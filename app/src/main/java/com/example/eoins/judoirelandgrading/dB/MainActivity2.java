@@ -144,7 +144,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     //Function which contains a dialog box for a title and list
     public void showMessage(String title, String Message) {
-        //Make the dialog box
+        //Make the dialog box to show the list
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         //Set title
