@@ -155,7 +155,7 @@ public class Blue extends Fragment {
         Terminology.add("Rei");
         Terminology.add("Dojo");
 
-        //All moves from above being put into the parent
+        //All moves from above being put into the
         //Parent layout called JudoMoves
         JudoMoves.put("Ukemi", Ukemi);
         JudoMoves.put("Naga Waza (Throwing Techniques)", NagaWaza);

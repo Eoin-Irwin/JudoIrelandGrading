@@ -20,9 +20,12 @@ public class Green extends Fragment {
     public static LinkedHashMap<String, List<String>> getInfo() {
 
         LinkedHashMap<String, List<String>> JudoMoves = new LinkedHashMap<>();
+        //List category "Ukemi" becoming an array list
         List<String> Ukemi = new ArrayList<>();
         Ukemi.add("All Breakfalls");
 
+        //List category "NagaWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> NagaWaza = new ArrayList<>();
         NagaWaza.add("Ko Soto Gake");
         NagaWaza.add("Tsuri Goshi");
@@ -52,6 +55,8 @@ public class Green extends Fragment {
         NagaWaza.add("Sasae Tsurakomi Ashi");
 
 
+        //List category "OsaekomiWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> OsaekomiWaza = new ArrayList<>();
         OsaekomiWaza.add("Makura Kesa Getame");
         OsaekomiWaza.add("Tate Shiho Getame");
@@ -64,6 +69,8 @@ public class Green extends Fragment {
         OsaekomiWaza.add("Kesa Getame");
         OsaekomiWaza.add("Kami Shiho Getame");
 
+        //List category "ShimeWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> ShimeWaza = new ArrayList<>();
         ShimeWaza.add("Okuri Eri Jime");
         ShimeWaza.add("Kata Ha Jime");
@@ -73,6 +80,8 @@ public class Green extends Fragment {
         ShimeWaza.add("Hadake Jime");
         ShimeWaza.add("Nami Juji Jime");
 
+        //List category "KansetsuWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> KansetsuWaza = new ArrayList<>();
         KansetsuWaza.add("Hiza Getame");
         KansetsuWaza.add("Ashi Getame");
@@ -80,6 +89,8 @@ public class Green extends Fragment {
         KansetsuWaza.add("Ude Garami");
         KansetsuWaza.add("Juji Getame");
 
+        //List category "GonosenNoKata" becoming an array list
+        //Moves being added into that array list also
         List<String> GonosenNoKata = new ArrayList<>();
         GonosenNoKata.add("O-soto-gari - O-soto-gari\n" +
                 "Hiza Guruma - Hiza Guruma\n" +
@@ -91,10 +102,14 @@ public class Green extends Fragment {
                 "Koshi-Guruma - Uki-Goshi\n" +
                 "Hane-Goshi - Sasae-Tsurikomi-Ashi\n");
 
+        //List category "NagaNoKata" becoming an array list
+        //Moves being added into that array list also
         List<String> NagaNoKata = new ArrayList<>();
         NagaNoKata.add("Koshi Waza");
         NagaNoKata.add("Te Waza");
 
+        //List category "Terminology" becoming an array list
+        //Words being added into that array list also
         List<String> Terminology = new ArrayList<>();
         Terminology.add("Sone Mama");
         Terminology.add("Yoshi");
@@ -119,6 +134,8 @@ public class Green extends Fragment {
         Terminology.add("Rei");
         Terminology.add("Dojo");
 
+        //All moves from above being put into the
+        //Parent layout called JudoMoves
         JudoMoves.put("Ukemi", Ukemi);
         JudoMoves.put("Naga Waza (Throwing Techniques)", NagaWaza);
         JudoMoves.put("Osaekomi Waza (Holding Techniques)", OsaekomiWaza);
