@@ -13,11 +13,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
 import com.example.eoins.judoirelandgrading.R;
 import com.example.eoins.judoirelandgrading.dB.MainActivity2;
@@ -25,12 +23,8 @@ import com.example.eoins.judoirelandgrading.dB.MainActivity2;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
 
-
-    ArrayAdapter<String> adapter;
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
-    private int position = 0;
-    private static final String LOG_TAG = "JudoIrelandGrading";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +32,20 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Initalise toolbar
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        //Set the toolbar instead of the action bar
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        //Initalise Fragment Drawer
         drawerFragment = (FragmentDrawer)
+                //Get the FragmentManager that has fragments associated with this activity.
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        //Initalise the drawer layout
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
+        //Drawer listener
         drawerFragment.setDrawerListener(this);
 
         // display the first navigation drawer view on app launch
@@ -53,16 +53,13 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     }
 
-    public void onContentChanged() {
-        super.onContentChanged();
-        Log.d(LOG_TAG, "onContentChanged");
-    }
-
+    //When an item is selected display it
     @Override
     public void onDrawerItemSelected(View view, int position) {
         displayView(position);
     }
 
+    //Function which has a switch case, contains fragments and bg colours of toolbars
     private void displayView(int position) {
         Fragment fragment = null;
         String title = getString(R.string.app_name);
@@ -117,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
+            //Start edit operations on the Fragments associated with this FragmentManager.
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_body, fragment);
             fragmentTransaction.commit();
@@ -126,18 +124,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         }
     }
 
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.add_record:
-
-                Intent main = new Intent(this, MainActivity.class)
-                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                startActivity(main);
-                break;
-        }
-    }
-
+    //Menu Inflation
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -145,14 +132,16 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         return true;
     }
 
+    //Overflow menu that allows the user
+    //to input a new record to database
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
         if (id == R.id.add_record) {
 
-            Intent add_mem = new Intent(this, MainActivity2.class);
-            startActivity(add_mem);
+            Intent add_to_db = new Intent(this, MainActivity2.class);
+            startActivity(add_to_db);
 
         }
         return super.onOptionsItemSelected(item);
