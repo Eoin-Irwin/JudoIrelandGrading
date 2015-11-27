@@ -25,6 +25,7 @@ import com.example.eoins.judoirelandgrading.dB.MainActivity2;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
 
+
     ArrayAdapter<String> adapter;
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
