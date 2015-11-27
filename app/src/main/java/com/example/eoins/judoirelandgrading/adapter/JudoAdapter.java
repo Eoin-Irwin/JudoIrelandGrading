@@ -81,7 +81,6 @@ public class JudoAdapter extends BaseExpandableListAdapter {
         parent_textview.setTypeface(null, Typeface.BOLD);
         parent_textview.setText(group_title);
 
-
         return convertview;
     }
 
@@ -93,7 +92,6 @@ public class JudoAdapter extends BaseExpandableListAdapter {
             LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertview = inflater.inflate(R.layout.child_layout, parentview, false);
         }
-
 
         TextView child_textview = (TextView) convertview.findViewById(R.id.child_txt);
         child_textview.setText(child_title);
