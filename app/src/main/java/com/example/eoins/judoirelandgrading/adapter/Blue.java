@@ -5,17 +5,12 @@ package com.example.eoins.judoirelandgrading.adapter;
  */
 
 import android.app.Fragment;
-import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Blue extends Fragment {
-    LinkedHashMap<String, List<String>> Judo_category;
-    List<String> judoMoves;
-    ExpandableListView Exp_list;
-    JudoAdapter adapter;
 
     public Blue() {
 
