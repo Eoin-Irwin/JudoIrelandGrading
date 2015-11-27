@@ -12,10 +12,6 @@ import java.util.List;
 
 public class Brown extends Fragment {
 
-    public Brown() {
-
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

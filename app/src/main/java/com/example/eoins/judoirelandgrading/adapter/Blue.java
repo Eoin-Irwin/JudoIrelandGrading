@@ -10,11 +10,9 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+//Class blue creates a Fragment
+//By extending from it
 public class Blue extends Fragment {
-
-    public Blue() {
-
-    }
 
     public static LinkedHashMap<String, List<String>> getInfo() {
 
