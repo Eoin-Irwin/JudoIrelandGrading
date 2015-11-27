@@ -152,7 +152,6 @@ public class Blue extends Fragment {
         JudoMoves.put("Naga No Kata", NagaNoKata);
         JudoMoves.put("Terminology", Terminology);
 
-
         return JudoMoves;
 
     }
