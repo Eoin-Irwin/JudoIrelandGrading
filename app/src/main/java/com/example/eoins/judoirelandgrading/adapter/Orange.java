@@ -1,0 +1,153 @@
+package com.example.eoins.judoirelandgrading.adapter;
+
+/**
+ * created by Eoin on 30-10-15
+ */
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ExpandableListView;
+
+import com.example.eoins.judoirelandgrading.R;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+public class Orange extends Fragment {
+    LinkedHashMap<String, List<String>> Judo_category;
+    List<String> judoMoves;
+    ExpandableListView Exp_list;
+    JudoAdapter adapter;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    public Orange() {
+
+    }
+
+    public static LinkedHashMap<String, List<String>> getInfo() {
+
+        LinkedHashMap<String, List<String>> JudoMoves = new LinkedHashMap<>();
+        List<String> Ukemi = new ArrayList<>();
+        Ukemi.add("All Breakfalls");
+
+        List<String> NagaWaza = new ArrayList<>();
+        NagaWaza.add("Koshi Guruma");
+        NagaWaza.add("Tsurikomi Goshi");
+        NagaWaza.add("Okuri Ashi Barai");
+        NagaWaza.add("Harai Goshi");
+        NagaWaza.add("Tai Otoshi");
+        NagaWaza.add("Uchimata");
+        NagaWaza.add("Harai Goshi");
+        NagaWaza.add("Ippon Seoi Nage (Shoulder Throw)");
+        NagaWaza.add("O Soto Gari");
+        NagaWaza.add("O Goshi");
+        NagaWaza.add("Ouchi Gari");
+        NagaWaza.add("Morote Seoi Nage");
+        NagaWaza.add("Ko Soto Gari");
+        NagaWaza.add("Ko Uchi Gari");
+        NagaWaza.add("De Ashi Barai");
+        NagaWaza.add("Hiza Guruma");
+        NagaWaza.add("Uki Goshi");
+        NagaWaza.add("Sasae Tsurakomi Ashi");
+
+
+        List<String> OsaekomiWaza = new ArrayList<>();
+        OsaekomiWaza.add("Tate Shiho Getame");
+        OsaekomiWaza.add("Ushiro Kesa Getame");
+        OsaekomiWaza.add("Kesure Kami Shiho Getame");
+        OsaekomiWaza.add("Yoko Shiho Getame");
+        OsaekomiWaza.add("Kezure Kesa Getame");
+        OsaekomiWaza.add("Kata Getame");
+        OsaekomiWaza.add("Mune Getame");
+        OsaekomiWaza.add("Kesa Getame");
+        OsaekomiWaza.add("Kami Shiho Getame");
+
+        List<String> ShimeWaza = new ArrayList<>();
+        ShimeWaza.add("Gyaku Juji Jime");
+        ShimeWaza.add("Kata Juji Jime");
+        ShimeWaza.add("Hadake Jime");
+        ShimeWaza.add("Nami Juji Jime");
+
+        List<String> KansetsuWaza = new ArrayList<>();
+        KansetsuWaza.add("Ude Getame");
+        KansetsuWaza.add("Ude Garami");
+        KansetsuWaza.add("Juji Getame");
+
+        List<String> GonosenNoKata = new ArrayList<>();
+        GonosenNoKata.add("O-soto-gari - O-soto-gari\n" +
+                "Hiza Guruma - Hiza Guruma\n" +
+                "Ouchi-Gari - De-Ashi-Barai/Okuri-Ashi-Barai\n");
+        GonosenNoKata.add("De-ashi-barai - De-Ashi-barai\n" +
+                "Ko-Soto-Gake - Tai-Otoshi\n" +
+                "Ko-Uchi-Gari - Sasae-Tsuri-komi-Ashi");
+
+
+        List<String> NagaNoKata = new ArrayList<>();
+        NagaNoKata.add("Te Waza");
+
+        List<String> Terminology = new ArrayList<>();
+        Terminology.add("Tachiwaza");
+        Terminology.add("Osaekomiwaza");
+        Terminology.add("Shimewaza");
+        Terminology.add("Kansetsuwaza");
+        Terminology.add("Katamewaza");
+        Terminology.add("Sensini");
+        Terminology.add("Tatame");
+        Terminology.add("Judogi");
+        Terminology.add("Obi");
+        Terminology.add("Osaekomi");
+        Terminology.add("Toketa");
+        Terminology.add("Hajime");
+        Terminology.add("Matte");
+        Terminology.add("Sore Made");
+        Terminology.add("Sensei");
+        Terminology.add("Rei");
+        Terminology.add("Dojo");
+
+        JudoMoves.put("Ukemi", Ukemi);
+        JudoMoves.put("Naga Waza (Throwing Techniques)", NagaWaza);
+        JudoMoves.put("Osaekomi Waza (Holding Techniques)", OsaekomiWaza);
+        JudoMoves.put("Shime Waza (Strangles)", ShimeWaza);
+        JudoMoves.put("Kansetsu Waza (Armlocks)", KansetsuWaza);
+        JudoMoves.put("Gonosen No Kata", GonosenNoKata);
+        JudoMoves.put("Naga No Kata", NagaNoKata);
+        JudoMoves.put("Terminology", Terminology);
+
+        return JudoMoves;
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.orange, container, false);
+        Exp_list = (ExpandableListView) rootView.findViewById(R.id.exp_list);
+        Judo_category = Orange.getInfo();
+        judoMoves = new ArrayList<String>(Judo_category.keySet());
+        adapter = new JudoAdapter(getActivity(), Judo_category, judoMoves);
+        Exp_list.setAdapter(adapter);
+
+        // Inflate the layout for this fragment
+        return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+}
