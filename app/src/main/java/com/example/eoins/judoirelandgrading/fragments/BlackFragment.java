@@ -27,10 +27,6 @@ public class BlackFragment extends Fragment {
     ExpandableListView Exp_list;
     JudoAdapter adapter;
 
-    public BlackFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

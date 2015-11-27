@@ -11,12 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.eoins.judoirelandgrading.R;
 import com.example.eoins.judoirelandgrading.model.NavDrawerItem;
-
 import java.util.Collections;
 import java.util.List;
+
 
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder> {
     List<NavDrawerItem> data = Collections.emptyList();
