@@ -18,23 +18,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.eoins.judoirelandgrading.R;
-import com.example.eoins.judoirelandgrading.dB.DatabaseHelper;
 import com.example.eoins.judoirelandgrading.dB.MainActivity2;
 
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
-
-    DatabaseHelper myDb;
-    EditText editName, editMemNo, editDate, editGrade, editScore;
-
-    Button btnAddData;
-    Button btnviewAll;
-    Button btnviewUpdate;
-    Button btnviewDelete;
 
     ArrayAdapter<String> adapter;
     private Toolbar mToolbar;
