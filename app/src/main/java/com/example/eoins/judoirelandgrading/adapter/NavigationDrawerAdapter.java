@@ -21,7 +21,7 @@ import java.util.List;
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder> {
     List<NavDrawerItem> data = Collections.emptyList();
     private LayoutInflater inflater;
-    private Context context;
+    public Context context;
 
     public NavigationDrawerAdapter(Context context, List<NavDrawerItem> data) {
         this.context = context;
