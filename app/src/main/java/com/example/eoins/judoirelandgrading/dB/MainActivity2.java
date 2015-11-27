@@ -121,7 +121,7 @@ public class MainActivity2 extends AppCompatActivity {
                             buffer.append("------------------------------------------------------------");
                         }
 
-                        showMessage("Data", buffer.toString());
+                        showMessage("Grading Database", buffer.toString());
                     }
                 }
         );

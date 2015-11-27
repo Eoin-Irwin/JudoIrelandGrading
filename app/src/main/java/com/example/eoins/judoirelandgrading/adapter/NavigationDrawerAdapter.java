@@ -53,7 +53,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         TextView title;
         ImageView imageView;
 
-
         public MyViewHolder(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.NavRowImage);
