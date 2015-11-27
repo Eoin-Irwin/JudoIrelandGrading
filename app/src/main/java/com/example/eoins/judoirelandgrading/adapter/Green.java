@@ -148,11 +148,15 @@ public class Green extends Fragment {
         return JudoMoves;
     }
 
+    //This is called when a fragment is first attached
+    //to the activity OnCreate is called after
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
     }
 
+    //This is called when a fragment is no longer
+    //attached to the activity
     @Override
     public void onDetach() {
         super.onDetach();
