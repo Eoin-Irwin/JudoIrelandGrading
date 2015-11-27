@@ -12,7 +12,7 @@
         android:id="@+id/exp_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#A4C7C9"
+        android:divider="#FFEB3B"
         android:dividerHeight="0.5dp"
         android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"></ExpandableListView>
 
