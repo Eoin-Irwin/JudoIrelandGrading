@@ -6,24 +6,17 @@ package com.example.eoins.judoirelandgrading.adapter;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+//Class blue creates a Fragment
+//By extending from it
 public class Green extends Fragment {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    public Green() {
-
-    }
-
+    //A list that will iterate in the order that the
+    //strings are placed into the code
     public static LinkedHashMap<String, List<String>> getInfo() {
 
         LinkedHashMap<String, List<String>> JudoMoves = new LinkedHashMap<>();

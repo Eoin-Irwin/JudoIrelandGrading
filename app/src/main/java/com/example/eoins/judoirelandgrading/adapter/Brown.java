@@ -4,7 +4,6 @@ package com.example.eoins.judoirelandgrading.adapter;
  */
 
 import android.app.Fragment;
-import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -13,12 +12,6 @@ import java.util.List;
 //Class Brown creates a Fragment
 //By extending from it
 public class Brown extends Fragment {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     //A list that will iterate in the order that the
     //strings are placed into the code
