@@ -29,14 +29,14 @@ import com.example.eoins.judoirelandgrading.dB.MainActivity2;
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
 
     DatabaseHelper myDb;
-    EditText editName,editMemNo,editDate,editGrade, editScore;
+    EditText editName, editMemNo, editDate, editGrade, editScore;
 
     Button btnAddData;
     Button btnviewAll;
     Button btnviewUpdate;
     Button btnviewDelete;
 
-ArrayAdapter<String> adapter;
+    ArrayAdapter<String> adapter;
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
     private int position = 0;
@@ -85,7 +85,7 @@ ArrayAdapter<String> adapter;
                 break;
             case 1:
                 mToolbar.setTitleTextColor(Color.WHITE);
-                mToolbar.setBackgroundColor(Color.rgb(255,235,59));
+                mToolbar.setBackgroundColor(Color.rgb(255, 235, 59));
                 fragment = new YellowFragment();
                 title = getString(R.string.title_yellow);
                 break;
@@ -97,27 +97,27 @@ ArrayAdapter<String> adapter;
                 break;
             case 3:
                 mToolbar.setTitleTextColor(Color.WHITE);
-                mToolbar.setBackgroundColor(Color.rgb(34,139,34));
+                mToolbar.setBackgroundColor(Color.rgb(34, 139, 34));
                 fragment = new GreenFragment();
                 title = getString(R.string.title_green);
                 break;
 
             case 4:
                 mToolbar.setTitleTextColor(Color.WHITE);
-                mToolbar.setBackgroundColor(Color.rgb(63,81,181));
+                mToolbar.setBackgroundColor(Color.rgb(63, 81, 181));
                 fragment = new BlueFragment();
                 title = getString(R.string.title_blue);
                 break;
 
             case 5:
                 mToolbar.setTitleTextColor(Color.WHITE);
-                mToolbar.setBackgroundColor(Color.rgb(121,85,72));
+                mToolbar.setBackgroundColor(Color.rgb(121, 85, 72));
                 fragment = new BrownFragment();
                 title = getString(R.string.title_brown);
                 break;
             case 6:
                 mToolbar.setTitleTextColor(Color.WHITE);
-                mToolbar.setBackgroundColor(Color.rgb(0,0,0));
+                mToolbar.setBackgroundColor(Color.rgb(0, 0, 0));
                 fragment = new BlackFragment();
                 title = getString(R.string.title_black);
                 break;

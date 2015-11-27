@@ -48,7 +48,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         NavDrawerItem current = data.get(position);
         holder.title.setText(current.getTitle());
         holder.imageView.setImageResource(current.getImage());
-       // holder.imageView.setImageDrawable(current.getImage());
+        // holder.imageView.setImageDrawable(current.getImage());
     }
 
     @Override
@@ -63,7 +63,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            imageView = (ImageView)itemView.findViewById(R.id.NavRowImage);
+            imageView = (ImageView) itemView.findViewById(R.id.NavRowImage);
             title = (TextView) itemView.findViewById(R.id.title);
         }
     }

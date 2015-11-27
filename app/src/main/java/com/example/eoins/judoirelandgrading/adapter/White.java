@@ -23,13 +23,14 @@ public class White extends Fragment {
 
     LinkedHashMap<String, List<String>> Judo_category;
     List<String> judoMoves;
-    ExpandableListView  Exp_list;
+    ExpandableListView Exp_list;
     JudoAdapter adapter;
     private static final String LOG_TAG = "JudoIrelandGrading";
 
     public White() {
 
     }
+
     public static LinkedHashMap<String, List<String>> getInfo() {
 
 

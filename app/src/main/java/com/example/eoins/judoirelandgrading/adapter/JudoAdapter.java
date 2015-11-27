@@ -73,9 +73,9 @@ public class JudoAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int parent, boolean isExpanded, View convertview, ViewGroup parentview) {
         String group_title = (String) getGroup(parent);
-        if(convertview == null) {
+        if (convertview == null) {
             LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertview = inflater.inflate(R.layout.parent_layout, parentview,false);
+            convertview = inflater.inflate(R.layout.parent_layout, parentview, false);
         }
         TextView parent_textview = (TextView) convertview.findViewById(R.id.parent_txt);
         parent_textview.setTypeface(null, Typeface.BOLD);
@@ -89,9 +89,9 @@ public class JudoAdapter extends BaseExpandableListAdapter {
     public View getChildView(final int parent, final int child, boolean lastChild, View convertview, ViewGroup parentview) {
         String child_title = (String) getChild(parent, child);
 
-        if(convertview == null) {
+        if (convertview == null) {
             LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertview = inflater.inflate(R.layout.child_layout, parentview,false);
+            convertview = inflater.inflate(R.layout.child_layout, parentview, false);
         }
 
 

@@ -14,28 +14,29 @@ import com.example.eoins.judoirelandgrading.R;
 
 public class MainActivity2 extends AppCompatActivity {
     DatabaseHelper myDb;
-    EditText editName,editMemNo,editDate,editGrade, editScore;
+    EditText editName, editMemNo, editDate, editGrade, editScore;
 
     Button btnAddData;
     Button btnviewAll;
     Button btnviewUpdate;
     Button btnviewDelete;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         myDb = new DatabaseHelper(this);
         setContentView(R.layout.activity_mainn);
 
-        editMemNo = (EditText)findViewById(R.id.mem_no);
-        editName = (EditText)findViewById(R.id.name);
-        editDate = (EditText)findViewById(R.id.date);
-        editGrade = (EditText)findViewById(R.id.grade);
-        editScore = (EditText)findViewById(R.id.score);
+        editMemNo = (EditText) findViewById(R.id.mem_no);
+        editName = (EditText) findViewById(R.id.name);
+        editDate = (EditText) findViewById(R.id.date);
+        editGrade = (EditText) findViewById(R.id.grade);
+        editScore = (EditText) findViewById(R.id.score);
 
-        btnAddData = (Button)findViewById(R.id.button_add);
-        btnviewAll = (Button)findViewById(R.id.button_viewAll);
-        btnviewUpdate = (Button)findViewById(R.id.button_update);
-        btnviewDelete = (Button)findViewById(R.id.button_delete);
+        btnAddData = (Button) findViewById(R.id.button_add);
+        btnviewAll = (Button) findViewById(R.id.button_viewAll);
+        btnviewUpdate = (Button) findViewById(R.id.button_update);
+        btnviewDelete = (Button) findViewById(R.id.button_delete);
 
         AddData();
         viewAll();
@@ -43,7 +44,7 @@ public class MainActivity2 extends AppCompatActivity {
         DeleteData();
     }
 
-    public void Updatedata(){
+    public void Updatedata() {
         btnviewUpdate.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -63,7 +64,8 @@ public class MainActivity2 extends AppCompatActivity {
                 }
         );
     }
-    public  void AddData() {
+
+    public void AddData() {
         btnAddData.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -82,7 +84,7 @@ public class MainActivity2 extends AppCompatActivity {
         );
     }
 
-    public void DeleteData(){
+    public void DeleteData() {
         btnviewDelete.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -98,34 +100,34 @@ public class MainActivity2 extends AppCompatActivity {
         );
     }
 
-    public void viewAll(){
+    public void viewAll() {
         btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Cursor res = myDb.getAllData();
-                        if(res.getColumnCount()==0){
+                        if (res.getColumnCount() == 0) {
                             //show message if nothing there
-                            showMessage("Error","Nothing found");
+                            showMessage("Error", "Nothing found");
                             return;
                         }
                         StringBuffer buffer = new StringBuffer();
-                        while(res.moveToNext()){
-                            buffer.append("Membership No: "+res.getString(0)+"\n");
-                            buffer.append("Name: "+  res.getString(1)+"\n");
-                            buffer.append("Date: "+  res.getString(2)+"\n");
-                            buffer.append("Grade: "+ res.getString(3)+"\n");
-                            buffer.append("Score: "+ res.getString(4)+"\n");
+                        while (res.moveToNext()) {
+                            buffer.append("Membership No: " + res.getString(0) + "\n");
+                            buffer.append("Name: " + res.getString(1) + "\n");
+                            buffer.append("Date: " + res.getString(2) + "\n");
+                            buffer.append("Grade: " + res.getString(3) + "\n");
+                            buffer.append("Score: " + res.getString(4) + "\n");
                             buffer.append("------------------------------------------------------------");
                         }
 
-                        showMessage("Data",buffer.toString());
+                        showMessage("Data", buffer.toString());
                     }
                 }
         );
     }
 
-    public void showMessage(String title, String Message){
+    public void showMessage(String title, String Message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);

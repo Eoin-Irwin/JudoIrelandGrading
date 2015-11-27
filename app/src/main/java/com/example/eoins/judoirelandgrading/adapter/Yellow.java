@@ -74,8 +74,8 @@ public class Yellow extends Fragment {
 
         List<String> GonosenNoKata = new ArrayList<>();
         GonosenNoKata.add("O-soto-gari - O-soto-gari\n" +
-                        "Hiza Guruma - Hiza Guruma\n" +
-                        "Ouchi-Gari - De-Ashi-Barai/Okuri-Ashi-Barai\n");
+                "Hiza Guruma - Hiza Guruma\n" +
+                "Ouchi-Gari - De-Ashi-Barai/Okuri-Ashi-Barai\n");
 
         List<String> Terminology = new ArrayList<>();
         Terminology.add("Sensini");

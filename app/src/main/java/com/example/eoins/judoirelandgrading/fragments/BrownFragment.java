@@ -24,7 +24,7 @@ import java.util.List;
 public class BrownFragment extends Fragment {
     LinkedHashMap<String, List<String>> Judo_category;
     List<String> judoMoves;
-    ExpandableListView  Exp_list;
+    ExpandableListView Exp_list;
     JudoAdapter adapter;
 
     public BrownFragment() {

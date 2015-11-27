@@ -2,6 +2,7 @@ package com.example.eoins.judoirelandgrading.fragments;
 /**
  * created by Eoin on 30-10-15
  */
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,11 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 
 
-
 public class WhiteFragment extends Fragment {
     HashMap<String, List<String>> Judo_category;
     List<String> judoMoves;
-    ExpandableListView  Exp_list;
+    ExpandableListView Exp_list;
     JudoAdapter adapter;
     private static final String LOG_TAG = "JudoIrelandGrading";
 

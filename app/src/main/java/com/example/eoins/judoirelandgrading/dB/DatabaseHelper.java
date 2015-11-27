@@ -26,47 +26,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
-    public boolean insertData(String mem_no,String name,String date,String grade,String score) {
+    public boolean insertData(String mem_no, String name, String date, String grade, String score) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1,mem_no);
-        contentValues.put(COL_2,name);
+        contentValues.put(COL_1, mem_no);
+        contentValues.put(COL_2, name);
         contentValues.put(COL_3, date);
         contentValues.put(COL_4, grade);
         contentValues.put(COL_5, score);
-        long result = db.insert(TABLE_NAME,null ,contentValues);
-        if(result == -1)
-            return false;
-        else
-            return true;
+        long result = db.insert(TABLE_NAME, null, contentValues);
+        return result != -1;
     }
 
-    public Integer deleteData(String id){
+    public Integer deleteData(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME,"MEM_NO = ?",new String[] {id});
+        return db.delete(TABLE_NAME, "MEM_NO = ?", new String[]{id});
     }
 
-    public Cursor getAllData(){
+    public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         return res;
     }
 
-    public boolean updateData(String mem_no,String name,String date,String grade,String score){
+    public boolean updateData(String mem_no, String name, String date, String grade, String score) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1,mem_no);
-        contentValues.put(COL_2,name);
-        contentValues.put(COL_3,date);
+        contentValues.put(COL_1, mem_no);
+        contentValues.put(COL_2, name);
+        contentValues.put(COL_3, date);
         contentValues.put(COL_4, grade);
         contentValues.put(COL_5, score);
 
 
-        db.update(TABLE_NAME,contentValues,"MEM_NO = ?",new String[] {mem_no});
+        db.update(TABLE_NAME, contentValues, "MEM_NO = ?", new String[]{mem_no});
         return true;
 
     }
