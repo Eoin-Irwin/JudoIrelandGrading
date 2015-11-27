@@ -32,13 +32,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean insertData(String mem_no, String name, String date, String grade, String score) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1, mem_no);
-        contentValues.put(COL_2, name);
-        contentValues.put(COL_3, date);
-        contentValues.put(COL_4, grade);
-        contentValues.put(COL_5, score);
-        long result = db.insert(TABLE_NAME, null, contentValues);
+        ContentValues DBValues = new ContentValues();
+        DBValues.put(COL_1, mem_no);
+        DBValues.put(COL_2, name);
+        DBValues.put(COL_3, date);
+        DBValues.put(COL_4, grade);
+        DBValues.put(COL_5, score);
+        long result = db.insert(TABLE_NAME, null, DBValues);
         return result != -1;
     }
 
@@ -55,15 +55,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean updateData(String mem_no, String name, String date, String grade, String score) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1, mem_no);
-        contentValues.put(COL_2, name);
-        contentValues.put(COL_3, date);
-        contentValues.put(COL_4, grade);
-        contentValues.put(COL_5, score);
+        ContentValues DBValues = new ContentValues();
+        DBValues.put(COL_1, mem_no);
+        DBValues.put(COL_2, name);
+        DBValues.put(COL_3, date);
+        DBValues.put(COL_4, grade);
+        DBValues.put(COL_5, score);
 
 
-        db.update(TABLE_NAME, contentValues, "MEM_NO = ?", new String[]{mem_no});
+        db.update(TABLE_NAME, DBValues, "MEM_NO = ?", new String[]{mem_no});
         return true;
 
     }
