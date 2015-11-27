@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+//Class Brown creates a Fragment
+//By extending from it
 public class Brown extends Fragment {
 
     @Override
@@ -18,12 +20,17 @@ public class Brown extends Fragment {
 
     }
 
+    //A list that will iterate in the order that the
+    //strings are placed into the code
     public static LinkedHashMap<String, List<String>> getInfo() {
 
         LinkedHashMap<String, List<String>> JudoMoves = new LinkedHashMap<>();
+        //List category "Ukemi" becoming an array list
         List<String> Ukemi = new ArrayList<>();
         Ukemi.add("All Breakfalls");
 
+        //List category "NagaWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> NagaWaza = new ArrayList<>();
         NagaWaza.add("O Soto Guruma");
         NagaWaza.add("Uki Waza");
@@ -71,7 +78,8 @@ public class Brown extends Fragment {
         NagaWaza.add("Uki Goshi");
         NagaWaza.add("Sasae Tsurakomi Ashi");
 
-
+        //List category "OsaekomiWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> OsaekomiWaza = new ArrayList<>();
         OsaekomiWaza.add("Kuzure Yoko Shiho Getame");
         OsaekomiWaza.add("Makura Kesa Getame");
@@ -85,6 +93,8 @@ public class Brown extends Fragment {
         OsaekomiWaza.add("Kesa Getame");
         OsaekomiWaza.add("Kami Shiho Getame");
 
+        //List category "ShimeWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> ShimeWaza = new ArrayList<>();
         ShimeWaza.add("Sode Guruma");
         ShimeWaza.add("Katsugi Jime");
@@ -97,6 +107,8 @@ public class Brown extends Fragment {
         ShimeWaza.add("Hadake Jime");
         ShimeWaza.add("Nami Juji Jime");
 
+        //List category "KansetsuWaza" becoming an array list
+        //Moves being added into that array list also
         List<String> KansetsuWaza = new ArrayList<>();
         KansetsuWaza.add("Waki Getame");
         KansetsuWaza.add("Kanuki Getame");
@@ -106,6 +118,8 @@ public class Brown extends Fragment {
         KansetsuWaza.add("Ude Garami");
         KansetsuWaza.add("Juji Getame");
 
+        //List category "GonosenNoKata" becoming an array list
+        //Moves being added into that array list also
         List<String> GonosenNoKata = new ArrayList<>();
         GonosenNoKata.add("O-soto-gari - O-soto-gari\n" +
                 "Hiza Guruma - Hiza Guruma\n" +
@@ -121,6 +135,8 @@ public class Brown extends Fragment {
                 "Kata-Seoi - Sumi-Gaeshi");
 
 
+        //List category "NagaNoKata" becoming an array list
+        //Moves being added into that array list also
         List<String> NagaNoKata = new ArrayList<>();
         NagaNoKata.add("Te Waza");
         NagaNoKata.add("Koshi Waza");
@@ -128,6 +144,8 @@ public class Brown extends Fragment {
         NagaNoKata.add("Ma Sutemi Waza");
         NagaNoKata.add("Yoko Sutemi Waza");
 
+        //List category "Terminology" becoming an array list
+        //words being added into that array list also
         List<String> Terminology = new ArrayList<>();
         Terminology.add("Keikoku");
         Terminology.add("Chui");
@@ -159,6 +177,8 @@ public class Brown extends Fragment {
         Terminology.add("Rei");
         Terminology.add("Dojo");
 
+        //All moves from above being put into the parent
+        //Parent layout called JudoMoves
         JudoMoves.put("Ukemi", Ukemi);
         JudoMoves.put("Naga Waza (Throwing Techniques)", NagaWaza);
         JudoMoves.put("Osaekomi Waza (Holding Techniques)", OsaekomiWaza);
