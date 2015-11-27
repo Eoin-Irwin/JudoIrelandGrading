@@ -24,6 +24,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Database helper being initalised
         myDb = new DatabaseHelper(this);
         setContentView(R.layout.activity_mainn);
 
@@ -38,26 +39,30 @@ public class MainActivity2 extends AppCompatActivity {
         btnviewUpdate = (Button) findViewById(R.id.button_update);
         btnviewDelete = (Button) findViewById(R.id.button_delete);
 
-        AddData();
-        viewAll();
-        Updatedata();
-        DeleteData();
+        Add();
+        select();
+        Update();
+        Delete();
     }
 
-    public void Updatedata() {
+    //Update class to change users info
+    public void Update() {
+        //Listener that updates data in the db
         btnviewUpdate.setOnClickListener(
                 new View.OnClickListener() {
+                    //On Click, update the info required to be updated
                     @Override
                     public void onClick(View v) {
-                        boolean isUpdate = myDb.updateData(editMemNo.getText().toString(),
+                        boolean Update = myDb.updateData(editMemNo.getText().toString(),
                                 editName.getText().toString(),
                                 editDate.getText().toString(),
                                 editGrade.getText().toString(),
                                 editScore.getText().toString()
 
                         );
-                        if (isUpdate == true)
-                            Toast.makeText(MainActivity2.this, "Data Updated", Toast.LENGTH_LONG).show();
+                        //If successful display a toast to say data was updated
+                        if (Update == true)
+                            Toast.makeText(MainActivity2.this, "Data Updated", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(MainActivity2.this, "Data not Updated", Toast.LENGTH_SHORT).show();
                     }
@@ -65,17 +70,19 @@ public class MainActivity2 extends AppCompatActivity {
         );
     }
 
-    public void AddData() {
+    //Class to add new values to the database
+    public void Add() {
+        //Listener that adds data in the db
         btnAddData.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(editMemNo.getText().toString(),
+                        boolean Insert = myDb.insertData(editMemNo.getText().toString(),
                                 editName.getText().toString(),
                                 editDate.getText().toString(),
                                 editGrade.getText().toString(),
                                 editScore.getText().toString());
-                        if (isInserted == true)
+                        if (Insert == true)
                             Toast.makeText(MainActivity2.this, "Data Inserted", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(MainActivity2.this, "Data not Inserted", Toast.LENGTH_SHORT).show();
@@ -84,13 +91,15 @@ public class MainActivity2 extends AppCompatActivity {
         );
     }
 
-    public void DeleteData() {
+    //Class to delete values to the database
+    public void Delete() {
+        //Listener that deletes data in the db
         btnviewDelete.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Integer deletedRows = myDb.deleteData(editMemNo.getText().toString());
-                        if (deletedRows > 0)
+                        Integer delete = myDb.deleteData(editMemNo.getText().toString());
+                        if (delete > 0)
                             Toast.makeText(MainActivity2.this, "Data Deleted", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(MainActivity2.this, "Data not deleted", Toast.LENGTH_SHORT).show();
@@ -100,17 +109,22 @@ public class MainActivity2 extends AppCompatActivity {
         );
     }
 
-    public void viewAll() {
+    //Select data from the db
+    public void select() {
         btnviewAll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //provides r-w access to the set returned by the query
                         Cursor res = myDb.getAllData();
                         if (res.getColumnCount() == 0) {
                             //show message if nothing there
                             showMessage("Error", "Nothing found");
                             return;
                         }
+                        //Accepts any type of data (boolean, char, int, long, Strings)
+                        //While loop to get each piece of data it will go to each
+                        //attribute in the table as specified below
                         StringBuffer buffer = new StringBuffer();
                         while (res.moveToNext()) {
                             buffer.append("Membership No: " + res.getString(0) + "\n");
@@ -121,17 +135,23 @@ public class MainActivity2 extends AppCompatActivity {
                             buffer.append("------------------------------------------------------------");
                         }
 
+                        //Display the below message
                         showMessage("Grading Database", buffer.toString());
                     }
                 }
         );
     }
 
+    //Function which contains a dialog box for a title and list
     public void showMessage(String title, String Message) {
+        //Make the dialog box
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
+        //Set title
         builder.setTitle(title);
+        //Set list
         builder.setMessage(Message);
+        //Show the list
         builder.show();
     }
 
