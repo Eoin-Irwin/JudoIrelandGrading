@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-
 public class BlackFragment extends Fragment {
     LinkedHashMap<String, List<String>> Judo_category;
     List<String> judoMoves;
