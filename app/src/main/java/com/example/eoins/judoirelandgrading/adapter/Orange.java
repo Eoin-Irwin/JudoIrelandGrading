@@ -19,10 +19,6 @@ public class Orange extends Fragment {
 
     }
 
-    public Orange() {
-
-    }
-
     public static LinkedHashMap<String, List<String>> getInfo() {
 
         LinkedHashMap<String, List<String>> JudoMoves = new LinkedHashMap<>();
