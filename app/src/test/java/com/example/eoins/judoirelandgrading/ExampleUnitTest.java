@@ -1,4 +1,4 @@
-package com.example.eoins.judoirelandgrading;
+package com.example.eoins.JudoIrelandGrading;
 
 import org.junit.Test;
 

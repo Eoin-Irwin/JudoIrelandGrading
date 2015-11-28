@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.eoins.judoirelandgrading">
+    package="com.eoins.JudoIrelandGrading">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme">
         <activity
-            android:name=".fragments.MainActivity"
+            android:name="com.example.eoins.JudoIrelandGrading.fragments.MainActivity"
             android:label="@string/app_name">
 
         <intent-filter>
@@ -18,7 +18,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".dB.MainActivity2"></activity>
+        <activity android:name="com.example.eoins.JudoIrelandGrading.dB.MainActivity2"></activity>
     </application>
 
 </manifest>
