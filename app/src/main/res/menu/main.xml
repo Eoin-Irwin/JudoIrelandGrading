@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/add_record"
-        android:icon="@drawable/ic_plus"
+        android:icon="@drawable/ic_oflow"
         android:orderInCategory="100"
         android:title="add_record"
         app:showAsAction="always" />
