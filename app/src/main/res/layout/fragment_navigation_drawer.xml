@@ -28,5 +28,4 @@
         android:layout_below="@id/nav_header_container"
         android:layout_marginTop="15dp" />
 
-
 </RelativeLayout>
